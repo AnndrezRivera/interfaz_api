@@ -2,40 +2,59 @@
 <html>
   <head>
     <title>My App</title>
+    <!-- Agrega el CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>My App</h1>
-    <h2>Endpoint /</h2>
-    <form method="post">
-      <label for="state">State:</label>
-      <select id="state" name="state">
-        {% for state in states %}
-          <option value="{{ state }}">{{ state }}</option>
-        {% endfor %}
-      </select>
-      <label for="categoria">Category:</label>
-      <select id="categoria" name="categoria">
-        {% for category in categories %}
-          <option value="{{ category }}">{{ category }}</option>
-        {% endfor %}
-      </select>
-      <input type="submit" value="Submit">
-    </form>
-    <h2>Endpoint /sentimiento_cercano</h2>
-    <form method="post" action="/sentimiento_cercano">
-      <label for="state">State:</label>
-      <select id="state" name="state">
-        {% for state in states %}
-          <option value="{{ state }}">{{ state }}</option>
-        {% endfor %}
-      </select>
-      <label for="categoria">Category:</label>
-      <select id="categoria" name="categoria">
-        {% for category in categories %}
-          <option value="{{ category }}">{{ category }}</option>
-        {% endfor %}
-      </select>
-      <input type="submit" value="Submit">
-    </form>
+    <div class="container">
+      <h1>My App</h1>
+      <h2>Endpoint /</h2>
+      <!-- Utiliza los estilos de formulario de Bootstrap -->
+      <form method="post" class="form-inline">
+        <div class="form-group">
+          <label for="state">State:</label>
+          <select id="state" name="state" class="form-control">
+            {% for state in states %}
+              <option value="{{ state }}">{{ state }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="categoria">Category:</label>
+          <select id="categoria" name="categoria" class="form-control">
+            {% for category in categories %}
+              <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+      </form>
+      <h2>Endpoint /sentimiento_cercano</h2>
+      <!-- Utiliza los estilos de formulario de Bootstrap -->
+      <form method="post" action="/sentimiento_cercano" class="form-inline">
+        <div class="form-group">
+          <label for="state">State:</label>
+          <select id="state" name="state" class="form-control">
+            {% for state in states %}
+              <option value="{{ state }}">{{ state }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="categoria">Category:</label>
+          <select id="categoria" name="categoria" class="form-control">
+            {% for category in categories %}
+              <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+      </form>
+    </div>
+
+    <!-- Agrega el JavaScript de Bootstrap -->
+    <script src="<URL>"></script>
+    <script src="<URL>"></script>
   </body>
 </html>
+
