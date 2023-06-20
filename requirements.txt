@@ -5,3 +5,6 @@ gunicorn
 fastapi
 python-multipart
 uvicorn
+fastparquet
+pandas
+numpy
