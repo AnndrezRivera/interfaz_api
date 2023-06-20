@@ -1,6 +1,7 @@
 import requests
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
+import pandas as pd
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
