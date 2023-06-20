@@ -5,12 +5,22 @@
   </head>
   <body>
     <h1>My App</h1>
+    <h2>Endpoint /</h2>
     <form method="post">
       <label for="state">State:</label>
       <input type="text" id="state" name="state">
-      <label for="category">Categoria:</label>
+      <label for="categoria">Category:</label>
+      <input type="text" id="categoria" name="categoria">
+      <input type="submit" value="Submit">
+    </form>
+    <h2>Endpoint /sentimiento_cercano</h2>
+    <form method="post" action="/sentimiento_cercano">
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state">
+      <label for="categoria">Category:</label>
       <input type="text" id="categoria" name="categoria">
       <input type="submit" value="Submit">
     </form>
   </body>
 </html>
+
