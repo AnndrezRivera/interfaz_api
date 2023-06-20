@@ -8,19 +8,34 @@
     <h2>Endpoint /</h2>
     <form method="post">
       <label for="state">State:</label>
-      <input type="text" id="state" name="state">
+      <select id="state" name="state">
+        {% for state in states %}
+          <option value="{{ state }}">{{ state }}</option>
+        {% endfor %}
+      </select>
       <label for="categoria">Category:</label>
-      <input type="text" id="categoria" name="categoria">
+      <select id="categoria" name="categoria">
+        {% for category in categories %}
+          <option value="{{ category }}">{{ category }}</option>
+        {% endfor %}
+      </select>
       <input type="submit" value="Submit">
     </form>
     <h2>Endpoint /sentimiento_cercano</h2>
     <form method="post" action="/sentimiento_cercano">
       <label for="state">State:</label>
-      <input type="text" id="state" name="state">
+      <select id="state" name="state">
+        {% for state in states %}
+          <option value="{{ state }}">{{ state }}</option>
+        {% endfor %}
+      </select>
       <label for="categoria">Category:</label>
-      <input type="text" id="categoria" name="categoria">
+      <select id="categoria" name="categoria">
+        {% for category in categories %}
+          <option value="{{ category }}">{{ category }}</option>
+        {% endfor %}
+      </select>
       <input type="submit" value="Submit">
     </form>
   </body>
 </html>
-
