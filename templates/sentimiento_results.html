@@ -7,7 +7,7 @@
     <h1>Results</h1>
     <ul>
       {% for result in results %}
-        <li>{{ result.name }}</li>
+        <li>{{ result.name }} - {{ result.address }} - {{ result.avg_rating }} - {{ result.categories }} - {{ result.attributes }} - {{ result.Sentimiento }}</li>
       {% endfor %}
     </ul>
   </body>
