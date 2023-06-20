@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+  </head>
+  <body>
+    <h1>Results</h1>
+    <ul>
+      {% for result in results %}
+        <li>{{ result.name }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
