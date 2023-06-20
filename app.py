@@ -7,11 +7,12 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         state = request.form['state']
-        category = request.form['category']
-        response = requests.get('https://api-recomendaciones.onrender.com')
+        categoria = request.form['categoria']
+        response = requests.get(f'https://api-recomendaciones.onrender.com/?state={state}&categoria={categoria}')
         data = response.json()
         return render_template('results.html', results=data)
     return render_template('index.html')
 
 if __name__ == '__main__':
     app.run()
+
