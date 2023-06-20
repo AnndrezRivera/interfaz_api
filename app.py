@@ -1,18 +1,17 @@
-from flask import Flask, render_template, request
+from fastapi import FastAPI, Form
+from fastapi.templating import Jinja2Templates
 import requests
 
-app = Flask(__name__)
+app = FastAPI()
+templates = Jinja2Templates(directory="templates")
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        state = request.form['state']
-        categoria = request.form['categoria']
-        response = requests.get(f'https://api-recomendaciones.onrender.com/?state={state}&categoria={categoria}')
-        data = response.json()
-        return render_template('results.html', results=data)
-    return render_template('index.html')
+@app.get("/")
+def index(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
-if __name__ == '__main__':
-    app.run()
+@app.post("/")
+def index(request: Request, state: str = Form(...), categoria: str = Form(...)):
+    response = requests.get(f'https://api-recomendaciones.onrender.com/?state={state}&categoria={categoria}')
+    data = response.json()
+    return templates.TemplateResponse("results.html", {"request": request, "results": data})
 
