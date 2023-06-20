@@ -14,16 +14,16 @@ us_states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', '
 states = df[df['state'].isin(us_states)]['state'].unique().tolist()
 
 categoria = df['categories'].str.split(', ').explode().unique().tolist()
-category = ['Italian', 'Burgers', 'chinese', 'hamburgers' 'hot dog', 'steakhouse', 'lunch', 'motel', 'patisserie', 'pizza', 'deli', 'diner', 'dinner', 'icecream', 'ice cream', 'hotel', 'hotels', 'seafood','cookie', 'crab house', 'cupcake', 'chocolate', 'churreria', 'cocktail', 'cocktails', 'coffee', 'coffees' 'tea', 'restaurant', 'restaurats', 'chesse', 'charcuterie', 'cafe', 'cafes', 'BBQ', 'bagle', 'bakery' 'bakerys', 'bar', 'bars', 'bar & grill', 'barbacue', 'beer' 'bistro', 'pasteleria', 'pastelerias', 'breakfast', 'brunch', 'buffet', 'burrito', 'cafeteria', 'cafeterias', 'cake', 'cakes', 'food', 'wine', 'wineries']
-categories = df[df['categories'].isin(category)]['categories'].unique().tolist()
+
 
 @app.get("/")
 def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "states": states, "categories": categories})
 
 @app.post("/")
-def index(request: Request, state: str = Form(...), categoria: str = Form(...)):
-    response = requests.get(f'https://api-recomendaciones.onrender.com/?state={state}&categoria={categoria}')
+def index(request: Request, state: str = Form(...), categories: str = Form(...)):
+    categories_input = request.form['categories']  # Obtener el valor ingresado por el usuario
+    response = requests.get(f'https://api-recomendaciones.onrender.com/?state={state}&categories={categories_input}%27')
     data = response.json()
     return templates.TemplateResponse("results.html", {"request": request, "results": data})
 
