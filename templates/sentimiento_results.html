@@ -2,12 +2,24 @@
 <html>
   <head>
     <title>My App</title>
+    <style>
+      .result {
+        background-color: #333;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
     <h1>Results</h1>
     <ul>
       {% for result in results %}
-        <li>{{ result.name }} - {{ result.address }} - {{ result.avg_rating }} - {{ result.categories }} - {{ result.attributes }} - {{ result.Sentimiento }}</li>
+        <li class="result">
+          {{ result.name }} - {{ result.address }} - {{ result.avg_rating }} - {{ result.categories }} - {{ result.attributes }} - {{ result.Sentimiento }}
+        </li>
       {% endfor %}
     </ul>
   </body>
