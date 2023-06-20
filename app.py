@@ -28,12 +28,12 @@ def index(request: Request, state: str = Form(...), categories: str = Form(...))
     data = response.json()
     return templates.TemplateResponse("results.html", {"request": request, "results": data})
 
-@app.get("/sentimiento_cercano")
+@app.get("/lugares_cercanos")
 def sentimiento_index(request: Request):
-    return templates.TemplateResponse("sentimiento_index.html", {"request": request, "states": states, "categories": categories})
+    return templates.TemplateResponse("lugares_index.html", {"request": request, "states": states, "categories": categories})
 
-@app.post("/sentimiento_cercano")
+@app.post("/lugares_cercanos")
 def sentimiento_index(request: Request, state: str = Form(...), categories: str = Form(...)):
-    response = requests.get(f'https://api-recomendaciones.onrender.com/sentimiento_cercano?state={state}&categoria={categories}')
+    response = requests.get(f'https://api-recomendaciones.onrender.com/lugares_cercanos?state={state}&categoria={categories}')
     data = response.json()
-    return templates.TemplateResponse("sentimiento_results.html", {"request": request, "results": data})
+    return templates.TemplateResponse("lugares_results.html", {"request": request, "results": data})
