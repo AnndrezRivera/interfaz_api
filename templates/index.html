@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My App</title>
+    <title>Personalized recommendations for your tastes</title>
     <!-- Agrega el CSS de Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Agrega estilos personalizados -->
+    <style>
+      body {
+        /* Agrega una imagen de fondo */
+        background-image: url('https://www.example.com/your-background-image.jpg');
+        /* Centra la imagen de fondo */
+        background-position: center;
+        /* Ajusta el tamaño de la imagen de fondo para cubrir todo el espacio disponible */
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1>My App</h1>
-      <h2>Endpoint /</h2>
+      <h1>DatumSearch</h1>
+      <h2>Strong search engine in categories</h2>
       <!-- Utiliza los estilos de formulario de Bootstrap -->
       <form method="post" class="form-inline">
         <div class="form-group">
@@ -29,7 +40,7 @@
         </div>
         <input type="submit" value="Submit" class="btn btn-primary">
       </form>
-      <h2>Endpoint /sentimiento_cercano</h2>
+      <h2>Search for nearby friendly sites</h2>
       <!-- Utiliza los estilos de formulario de Bootstrap -->
       <form method="post" action="/sentimiento_cercano" class="form-inline">
         <div class="form-group">
@@ -51,10 +62,6 @@
         <input type="submit" value="Submit" class="btn btn-primary">
       </form>
     </div>
-
-    <!-- Agrega el JavaScript de Bootstrap -->
-    <script src="<URL>"></script>
-    <script src="<URL>"></script>
   </body>
 </html>
 
