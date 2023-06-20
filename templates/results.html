@@ -2,12 +2,29 @@
 <html>
   <head>
     <title>My App</title>
+    <style>
+      /* Estilos CSS para mejorar la apariencia */
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      
+      li {
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
     <h1>Results</h1>
     <ul>
       {% for result in results %}
-        <li>{{ result.name }} - {{ result.address }} - {{ result.avg_rating }} - {{ result.categories }} - {{ result.attributes }}</li>
+        <li>
+          <strong>Name:</strong> {{ result.name }}<br>
+          <strong>Address:</strong> {{ result.address }}<br>
+          <strong>Average Rating:</strong> {{ result.avg_rating }}<br>
+          <strong>Categories:</strong> {{ result.categories }}<br>
+          <strong>Attributes:</strong> {{ result.attributes }}
+        </li>
       {% endfor %}
     </ul>
   </body>
