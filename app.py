@@ -7,7 +7,7 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 
-states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+states = ['WA', 'LA', 'IL', 'OH', 'TN', 'CO', 'CA', 'MO', 'SC', 'NC', 'FL', 'TX', 'PA', 'NY', 'ND', 'VA', 'NE', 'MN', 'NH', 'UT', 'OR', 'GA', 'OK', 'NJ', 'AR', 'DE', 'AL', 'ME', 'MI', 'MA', 'AZ', 'CT', 'WI', 'IN', 'KY', 'AK', 'NM', 'MD', 'NV', 'WY', 'RI', 'IA', 'SD', 'VT', 'MS', 'KS', 'HI', 'WV', 'MT', 'ID', 'AB']
 
 
 categories = ['burger', 'burgers', 'hamburger', 'hamburgers', 'hot dog', 'steakhouse', 'lunch', 'motel', 'patisserie', 'pizza', 'deli', 'diner', 'dinner', 'icecream', 'ice cream', 'hotel', 'hotels', 'seafood', 'cookie', 'crab house', 'cupcake', 'chocolate', 'churreria', 'cocktail', 'cocktails', 'coffee', 'coffees', 'tea', 'restaurant', 'restaurats', 'cheese', 'charcuterie', 'cafe', 'cafes', 'BBQ', 'bagel', 'bakery', 'bakerys', 'bar', 'bars', 'bar & grill', 'barbecue', 'beer', 'bistro', 'pastry shop', 'pastry shops', 'breakfast', 'brunch', 'buffet', 'burrito', 'cafeteria', 'cafeterias', 'cake', 'cakes', 'food', 'wine', 'wineries']
